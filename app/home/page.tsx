@@ -31,6 +31,8 @@ export default function Home() {
 
 	const [selectedMeal, setSelectedMeal] = useState(Period.BREAKFAST);
 
+	const [mealString, setMealString] = useState("Breakfast");
+
 	// Date state for API calls
 	const [dateFormat, setDateFormat] = useState(() => {
 		const date = new Date();
@@ -64,10 +66,7 @@ export default function Home() {
 
 	useEffect(() => {
 		async function getMenu() {
-			console.log("Old Menu: ", menus);
-			console.log("New Period: ", selectedMeal);
 			const menu = await fetchMenu(dateFormat, selectedMeal)
-			console.log("New Menu: ", menu);
 			setMenus(menu)
 		}
 		getMenu()
@@ -75,19 +74,23 @@ export default function Home() {
 
 
 	function handleMealChange(meal: string) {
-		console.log(meal);
 		setShowMealSelector(false);
+		setMealString(meal.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()));
 		{/*// @ts-ignore */}
 		setSelectedMeal(Period[meal]);
 	}
 
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
+		<main className="flex min-h-screen flex-col items-center justify-between py-20">
+			<div className='m-5 [&>*]:text-center'>
+				<h1 className="text-5xl font-bold">{selectedDate.toDateString()}</h1>
+				<h1 className="text-5xl font-bold">{mealString}</h1>
+				
+			</div>
 			<div className='flex flex-row justify-center [&>*]:mx-3'>
 				<button className='btn btn-primary' onClick={() => setShowCalendar(true)}>Change Date</button>
 				<button className='btn btn-secondary' onClick={() => setShowMealSelector(true)}>Change Meal</button>
 				{/* <h1>Date: {selectedDate.toString()}</h1> */}
-				<h1>Meal: {selectedMeal}</h1>
 			</div>
 			<div className='flex flex-row flex-wrap justify-center'>
 				{

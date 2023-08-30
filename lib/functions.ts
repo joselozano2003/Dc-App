@@ -18,7 +18,7 @@ export function createLink(dateFormatted: string, period: string) {
 
 export async function fetchMenu(dateFormatted: string, period: string) {
 
-	const menuResponse = await fetch(`${PROD}/api/menu?date=${dateFormatted}&period=${period}`, {
+	const menuResponse = await fetch(`/api/menu?date=${dateFormatted}&period=${period}`, {
 		method: 'GET',
         headers: {
             'Content-Type': 'application/json'

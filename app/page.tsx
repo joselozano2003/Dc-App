@@ -1,5 +1,10 @@
 import Link from "next/link"
 
+export const metadata = {
+	title: "Da Landing",
+	description: "Da Landing",
+}
+
 export default function Home() {
 	return (
 		<main>
