@@ -16,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className='h-[100vh]'>
+          <div className='min-h-vh-minus-header'>
+						{children}	
+					</div>	
+      </body>
     </html>
   )
 }
