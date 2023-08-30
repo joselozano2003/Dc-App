@@ -92,7 +92,7 @@ export default function Home() {
 				<button className='btn btn-secondary' onClick={() => setShowMealSelector(true)}>Change Meal</button>
 				{/* <h1>Date: {selectedDate.toString()}</h1> */}
 			</div>
-			<div className='flex flex-row flex-wrap justify-center'>
+			<div className='flex flex-row flex-wrap justify-center items-start'>
 				{
 					Object.keys(menus).map(stationName => (
 						<div key={stationName} className='card w-80 bg-primary text-primary-content m-5 p-5'>
