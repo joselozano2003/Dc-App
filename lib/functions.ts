@@ -2,6 +2,8 @@ import { Period } from "./constants";
 
 const DEV = "http://localhost:3000/"
 
+const PROD = "https://dc-app-nine.vercel.app"
+
 export function createLink(dateFormatted: string, period: string) {
 	const link = new URL("https://ucalgary.campusdish.com/api/menu/GetMenus");
 	const LOCATION = "8345";
@@ -16,7 +18,7 @@ export function createLink(dateFormatted: string, period: string) {
 
 export async function fetchMenu(dateFormatted: string, period: string) {
 
-	const menuResponse = await fetch(`${DEV}/api/menu?date=${dateFormatted}&period=${period}`, {
+	const menuResponse = await fetch(`${PROD}/api/menu?date=${dateFormatted}&period=${period}`, {
 		method: 'GET',
         headers: {
             'Content-Type': 'application/json'
