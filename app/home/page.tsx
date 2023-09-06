@@ -114,7 +114,7 @@ export default function Home() {
 
 				{showCalendar && (
 					<div className="popup">
-						<div className="popup-inner">
+						<div className="popup-inner bg-primary">
 							<div className="topCalendar">
 								<button className="close-button" onClick={() => setShowCalendar(false)}>X</button>
 								<h2>Select A Date</h2>
