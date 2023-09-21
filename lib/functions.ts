@@ -12,7 +12,6 @@ export function createLink(dateFormatted: string, period: string) {
 	link.searchParams.set("mode", MODE);
 	link.searchParams.set("date", dateFormatted);
 	link.searchParams.set("periodId", period);
-	console.log(link.toString());
 	return link;
 }
 

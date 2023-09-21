@@ -71,7 +71,6 @@ export default function Home() {
     useEffect(() => {
 		async function getMenu() {
 			const menu = await fetchMenu(formatDate(new Date()), currentMeal())
-			console.log("Initial menu: ", menu)
 			setMenus(menu)
 		}
 		getMenu()
@@ -81,7 +80,6 @@ export default function Home() {
 		async function getMenu() {
 			const menu = await fetchMenu(dateFormat, meal)
 			setMenus(menu)
-            console.log(menu)
 		}
 		getMenu()
 	}, [dateFormat, meal])
@@ -95,7 +93,7 @@ export default function Home() {
 				<h1 className="text-5xl font-bold">{mealString}</h1>
 				
 			</div>
-            <div className='flex flex-row justify-center [&>*]:mx-3 [&>*]:shadow-2xl'>
+            <div className='flex flex-col md:flex-row justify-center items-center [&>*]:mx-3 [&>*]:shadow-2xl '>
                 <CalendarPopover date={date} setDate={setDate} />
                 <MealPopover handle={handleMealChange}/>
             </div>
