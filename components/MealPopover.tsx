@@ -16,7 +16,7 @@ export default function MealPopover({ handle }: Props) {
     return (
         <Popover>
             <PopoverTrigger asChild>
-                <Button variant="default">Select Meal</Button>
+                <Button className="max-w-[10em] my-2" variant="default">Select Meal</Button>
             </PopoverTrigger>
             <PopoverContent className="w-80">
                 <h1 className="text-center font-bold m-4 text-xl">Change Meal</h1>

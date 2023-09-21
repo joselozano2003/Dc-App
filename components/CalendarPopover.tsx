@@ -19,7 +19,7 @@ export default function CalendarPopover({ date, setDate }: Props) {
     return (
         <Popover>
             <PopoverTrigger asChild>
-                <Button variant="default">Select Date</Button>
+                <Button className="max-w-[10em] my-2" variant="default">Select Date</Button>
             </PopoverTrigger>
             <PopoverContent className="w-80">
                 <Calendar

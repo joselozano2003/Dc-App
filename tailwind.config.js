@@ -11,6 +11,16 @@ module.exports = {
     minWidth:{
       'card': '100px',
     },
+    screens: {
+      'sm': '400px',
+      // => @media (min-width: 576px) { ... }
+
+      'md': '700px',
+      // => @media (min-width: 960px) { ... }
+
+      'lg': '1000px',
+      // => @media (min-width: 1440px) { ... }
+    },
     container: {
       center: true,
       padding: "2rem",
