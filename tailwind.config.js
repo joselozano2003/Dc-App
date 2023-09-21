@@ -8,6 +8,9 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+    minWidth:{
+      'card': '100px',
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -16,6 +19,14 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      minHeight: {
+        'vh-minus-header': 'calc(100vh)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

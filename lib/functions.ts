@@ -64,9 +64,9 @@ export async function fetchMenu(dateFormatted: string, period: string) {
 	return final; // return the products array
 }
 
-export function formatDate(date: Date) {
-	const year = date.getFullYear();
-	const month = String(date.getMonth() + 1).padStart(2, '0');
-	const day = String(date.getDate()).padStart(2, '0');
+export function formatDate(date: Date | undefined) {
+	const year = date!.getFullYear();
+	const month = String(date!.getMonth() + 1).padStart(2, '0');
+	const day = String(date!.getDate()).padStart(2, '0');
 	return `${year}-${month}-${day}`;
 }
