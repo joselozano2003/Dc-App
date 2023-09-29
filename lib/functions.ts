@@ -51,14 +51,6 @@ export async function fetchMenu(dateFormatted: string, period: string) {
 	}, {});
 
 	const final: any = groupedProducts
-	
-	// Now you can access the grouped products using the station ID as the key:
-	// for (const stationId in groupedProducts) {
-	// 	if (groupedProducts.hasOwnProperty(stationId)) {
-	// 		const productsForStation = groupedProducts[stationId];
-	// 		console.log(`Products for station ${stationId}:`, productsForStation);
-	// 	}
-	// }
 
 	return final; // return the products array
 }

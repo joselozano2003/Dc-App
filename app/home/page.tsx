@@ -13,8 +13,6 @@ import StationCard from '@/components/StationCard';
 export default function Home() {
     // Calendar Date
     const [date, setDate] = useState<Date | undefined>(new Date())
-    // Date state for API calls
-
 	const [dateFormat, setDateFormat] = useState(() => {
 		const date = new Date();
 		const year = date.getFullYear();
@@ -23,7 +21,6 @@ export default function Home() {
 		const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 		return formattedDate;
 	});
-
     useEffect(() => {
         if (date) {
             setDateFormat(formatDate(date));
@@ -31,9 +28,7 @@ export default function Home() {
     }, [date])
 
     const [meal, setMeal] = useState(currentMeal());
-
     const [mealString, setMealString] = useState(currentMealString());
-
     function handleMealChange(meal: string) {
 		setMealString(meal.toLowerCase().replace(/\b\w/g, s => s.toUpperCase()));
 		{/*// @ts-ignore */}
@@ -50,7 +45,6 @@ export default function Home() {
             return Period.DINNER;
         }
     }
-
     function currentMealString() {
         const currentTime = new Date().getHours();
         if (currentTime <= 11) {
@@ -83,8 +77,6 @@ export default function Home() {
 		}
 		getMenu()
 	}, [dateFormat, meal])
-
-
 
     return (
         <div className='p-5'>
