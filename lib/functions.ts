@@ -13,7 +13,7 @@ export function createLink(dateFormatted: string, period: string) {
 export async function fetchMenu(dateFormatted: string, period: string) {
 
 
-	console.log(`/api/menu?date=${dateFormatted}&period=${period}`)
+	// console.log(`/api/menu?date=${dateFormatted}&period=${period}`)
 	const menuResponse = await fetch(`/api/menu?date=${dateFormatted}&period=${period}`, {
 		method: 'GET',
         headers: {
@@ -38,6 +38,8 @@ export async function fetchMenu(dateFormatted: string, period: string) {
 		categoryRank: parseInt(i.Product.Categories[0].MenuRanking),
 	}));
 
+	// console.log(products);
+
 
 	const groupedProducts: { [station: string]: any[] } = products.reduce((result: any, product: any) => {
 		if (!result[product.station]) {
@@ -48,6 +50,8 @@ export async function fetchMenu(dateFormatted: string, period: string) {
 	}, {});
 
 	const final: any = groupedProducts
+
+	console.log(final);
 
 	return final; // return the products array
 }
