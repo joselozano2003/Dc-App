@@ -16,14 +16,24 @@ export async function GET(req: NextRequest) {
 
     const link = createLink(date, period);
 
+    console.log(link.toString());
+
     const response = await fetch(link.toString());
+
+    console.log(response);
 
     if (response.ok) {
         const data = await response.json();
+        console.log(data);
+
+        console.log(data);
         return NextResponse.json(data);
     }
 
+
+
     else {
+        console.log(response);
         return NextResponse.json({ 
             message : "Error fetching data"
         }, { 

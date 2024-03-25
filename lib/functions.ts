@@ -1,9 +1,3 @@
-import { Period } from "./constants";
-
-const DEV = "http://localhost:3000/"
-
-const PROD = "https://dc-app-nine.vercel.app"
-
 export function createLink(dateFormatted: string, period: string) {
 	const link = new URL("https://ucalgary.campusdish.com/api/menu/GetMenus");
 	const LOCATION = "8345";
@@ -12,11 +6,14 @@ export function createLink(dateFormatted: string, period: string) {
 	link.searchParams.set("mode", MODE);
 	link.searchParams.set("date", dateFormatted);
 	link.searchParams.set("periodId", period);
+	link.searchParams.set("fulfillmentMethod", "");
 	return link;
 }
 
 export async function fetchMenu(dateFormatted: string, period: string) {
 
+
+	console.log(`/api/menu?date=${dateFormatted}&period=${period}`)
 	const menuResponse = await fetch(`/api/menu?date=${dateFormatted}&period=${period}`, {
 		method: 'GET',
         headers: {
